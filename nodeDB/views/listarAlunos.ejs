@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Alunos</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Listagem de Alunos</h1>
+        </header>
+        <section>
+            <h2>Dashboard</h2>
+            <% if(bancoAlunos.length>0){ %>
+            <table>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Turma</th>
+                    <th>Serie</th>
+                    <th>Sexo</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Responsavel</th>
+                    <th colspan="2">Ações</th>
+                </tr>
+            <% bancoAlunos.forEach(aluno =>{ %>
+                <tr>
+                    <td><%= aluno.MATRICULA %></td>
+                    <td><%= aluno.NOME %></td>
+                    <td><%= aluno.EMAIL %></td>
+                    <td><%= aluno.TURMA %></td>
+                    <td><%= aluno.SERIE %></td>
+                    <td><%= aluno.SEXO %></td>
+                    <td><%= aluno.TELEFONE %></td>
+                    <td><%= aluno.ENDERECO %></td>
+                    <td><%= aluno.RESPONSAVEL %></td>
+                    <td> <a href="/alunos/editarAluno/<%= aluno.MATRICULA %>">Editar</a></td>
+                    <td> <a href="/alunos/deletarAluno/<%= aluno.MATRICULA %>">Remover</a></td>
+                </tr>
+                <%}); %>
+            </table>
+            <% }else{ %>
+                <p>Nenhum registro cadastrado!!</p>
+            <% } %>
+        </section>
+    </main>    
+</body>
+</html>

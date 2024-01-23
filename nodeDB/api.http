@@ -1,0 +1,45 @@
+###
+GET http://localhost:3000
+
+###
+GET http://localhost:3000/alunos
+
+###
+POST http://localhost:3000/alunos/cadastro
+Content-Type: application/json
+
+{
+    "nome": "sample",
+    "matricula": "12345",
+    "email": "teste@gmail.com",
+    "turma": "B",
+    "serie": 1,
+    "sexo": "F",
+    "telefone": "(84) 9090 9090",
+    "endereco": "Rua teste do teste",
+    "responsavel": "Teste"
+}
+
+###
+GET http://localhost:3000/alunos/listarAlunos
+
+###
+GET http://localhost:3000/alunos/buscarAluno/123456789
+
+###
+PUT http://localhost:3000/alunos/editarAluno/123456789
+Content-Type: application/json
+
+{
+    "nome": "Natalina",
+    "email": "natalina@gmail.com",
+    "turma": "C",
+    "serie": 3,
+    "sexo": "F",
+    "telefone": "(84) 9090 9090",
+    "endereco": "Rua Quixeramobim",
+    "responsavel": "Papai Noel"
+}
+
+###
+DELETE http://localhost:3000/alunos/deletarAluno/123456789
